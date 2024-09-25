@@ -1,0 +1,239 @@
+*{
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+    margin: 0;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    object-fit: cover;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Top Header */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2rem 20%;
+    align-items: center;
+    background-color: hsl(210, 18%, 91%);
+}
+
+.top-header-news-highlight {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.top-header ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.top-header ul li {
+    color: #040404;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8rem;
+}
+
+.featured-news ul li:first-child {
+    color: hsl(0, 100%, 50%);  /* Cambia el color del primer <li> a rojo */
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.featured-news ul li:first-child::after {
+    content:':';
+    margin-right: 0.25rem;
+}
+
+.featured-news ul li:not(:first-child):not(:last-child)::after {
+    padding: 0 0.25rem;
+    content: "-";
+}
+
+.editions ul li:not(:last-child)::after {
+    content:'|';
+    padding: 0 0.25rem;
+}
+
+.editions ul li {
+    text-transform: uppercase;
+}
+
+
+/* Main Header */
+.main-header {
+    background-color: hsl(2, 97%, 50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 20%;
+    align-items: center;
+    display: flex;
+    align-items: center;
+}
+
+.menu-main-header svg{
+    fill: hsla(0, 0%, 100%);
+    width: 2rem;
+}
+
+.logo{
+    margin-left: 5rem;
+}
+
+.logo svg {
+    width: 300px;
+    height: 50px;
+    background-color: hsl(2, 97%, 50%); /* Placeholder for logo */
+    color: hsl(0, 0%, 100%);
+    fill: hsla(0, 0%, 100%);
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sign-in, .register {
+    display: flex;
+    align-items: center;
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+}
+
+.sign-in button{
+    background-color: hsl(207, 17%, 88%);
+    border: none;
+    border-radius: 0.2rem;
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.2rem 0.5rem;
+}
+
+.register button{
+    background-color: hsl(47, 100%, 50%);
+    border: none;
+    border-radius: 0.2rem;
+    font-style: italic;
+    font-weight: 600;
+    padding: 0.5rem;
+}
+
+.sign-in button svg{
+    width: 1.5rem;
+}
+
+/* Tabs Menu Header */
+.tabs-menu-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20%;
+    background-color: hsl(0, 0%, 90%);
+}
+
+.menu{
+    width: 100%;
+}
+
+.menu ul {
+    align-items: center;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    color: hsl(0, 0%, 20%);
+    cursor: pointer;
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.menu ul li:hover {
+    color: #E74C3C;
+}
+
+.menu ul li:first-child svg{
+    fill: hsl(0, 0%, 20%);
+    width: 2rem;
+}
+
+.menu ul li:last-child svg{
+    fill: hsl(0, 0%, 20%);
+    width: 1.5rem;
+}
+
+
+.button-home-menu-header,
+.button-home-search-header {
+    width: 30px;
+    height: 30px;
+    background-color: white; /* Placeholder for buttons */
+    cursor: pointer;
+}
+
+/* Banner */
+.banner {
+    text-align: center;
+}
+
+/* Layout Columns */
+
+main{
+    padding: 0 20%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 2fr 1fr; 
+    grid-template-rows: auto 1fr; 
+}
+
+.one-column,
+.two-column,
+.three-column {
+    width: 100%;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 1rem;
+}
+
+.three-column {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    gap: 1rem;
+}
+
+
+.banner.vertical{
+   position: sticky;
+   top: 1rem;
+}
+
+.banner.horizontal{
+    grid-column: 1 / span 2; 
+}
+ 
