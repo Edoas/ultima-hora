@@ -1,0 +1,8 @@
+import './components/header.js' 
+import './components/topHeader.js'
+import './components/main.js'
+import './components/mainHeader.js'
+import './components/tabsMenuHeader.js'
+import './components/bannerHorizontal.js'
+import './components/news.js'
+import './components/bannerVertical.js'

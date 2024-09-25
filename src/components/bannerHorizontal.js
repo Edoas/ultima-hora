@@ -1,0 +1,30 @@
+class BannerHorizontal extends HTMLElement {
+    constructor () {
+      super()
+      this.shadow = this.attachShadow({ mode: 'open' })
+    }
+  
+    connectedCallback () {
+      this.render()
+    }
+  
+    render () {
+      this.shadow.innerHTML =
+      /*html*/`
+        <style>
+					.banner {
+						text-align: center;
+					}
+					.banner.horizontal{
+						grid-column: 1 / span 2; 
+					}        
+        </style>  
+
+        <div class="banner horizontal">
+            <img src="/media/banner1.webp" alt="banner">
+        </div>     
+      `
+
+    }
+  }
+  customElements.define('banner-horizontal-component', BannerHorizontal)
