@@ -12,13 +12,19 @@ class BannerVertical extends HTMLElement {
       this.shadow.innerHTML =
       /*html*/`
         <style>
-            .banner {
+          img{
+            object-fit: cover;
+            width: 100%;
+          }
+
+          .banner {
             text-align: center;
-        }
-        .banner.vertical{
-        position: sticky;
-        top: 1rem;
-        }
+          }
+
+          .banner.vertical{
+            position: sticky;
+            top: 1rem;
+          }
            
         </style>  
         

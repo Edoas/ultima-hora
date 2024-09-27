@@ -12,12 +12,26 @@ class BannerHorizontal extends HTMLElement {
       this.shadow.innerHTML =
       /*html*/`
         <style>
+
+          *{
+            box-sizing: border-box;
+          }
+
+          img{
+            object-fit: cover;
+            width: 100%;
+          }
+          
 					.banner {
 						text-align: center;
+            
 					}
 					.banner.horizontal{
 						grid-column: 1 / span 2; 
+            margin: 1rem 0;
+            padding: 0 20%;
 					}        
+
         </style>  
 
         <div class="banner horizontal">

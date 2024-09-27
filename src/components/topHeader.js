@@ -4,10 +4,27 @@ class TopHeader extends HTMLElement {
       this.shadow = this.attachShadow({ mode: 'open' })
     }
   
-    connectedCallback () {
-      this.render()
+    async connectedCallback () {
+      await this.loadData()
+      await this.render()
+    }
+
+    async loadData(){
+        this.data = [
+            {  
+                newTitle: "Tragedia en la Serra"
+            },
+            {
+                newTitle: "Alquiler de pisos"
+            },
+            {
+                newTitle: "Asentamiento en Nou Llevant"
+            }
+
+        ]
     }
   
+
     render () {
       this.shadow.innerHTML =
       /*html*/`
@@ -71,27 +88,37 @@ class TopHeader extends HTMLElement {
         }
 
 
-      </style> 
+        </style> 
+    
+        <div class="top-header">
+            <div class="featured-news">
+                <ul>
+                    <li>Hoy es Noticia</li>
+                </ul>
+            </div>
+            <div class="editions">
+                <ul>
+                    <li>Mallorca</li> 
+                    <li>Menorca</li>
+                    <li>Ibiza y Formentera</li>
+                </ul>
+        </div>
+        </div>
+        `
 
-      <div class="top-header">
-      <div class="featured-news">
-          <ul>
-              <li>Hoy es Noticia</li>
-              <li>Tragedia en la Serra</li> 
-              <li>Alquiler de pisos</li>
-              <li>Asentamiento en Nou Llevant</li>
-          </ul>
-      </div>
-      <div class="editions">
-          <ul>
-              <li>Mallorca</li> 
-              <li>Menorca</li>
-              <li>Ibiza y Formentera</li>
-          </ul>
-      </div>
-  </div>
-      `
+        const newsTop = this.shadow.querySelector('.featured-news ul')
+
+        this.data.forEach(element => {
+
+            const li = document.createElement('li')
+            li.textContent = element.newTitle;  
+
+
+            newsTop.appendChild(li)
+        })
+
     }
+
 }
 
 customElements.define('top-header-component', TopHeader)
